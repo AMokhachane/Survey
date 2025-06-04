@@ -1,0 +1,49 @@
+/* SurveyForm.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.food-options {
+  margin-bottom: 20px;
+}
+
+.food-options label {
+  margin-right: 15px;
+}
+
+.rating-intro {
+  margin-bottom: 10px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+button {
+  background-color: #165A72;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
