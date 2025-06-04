@@ -7,6 +7,7 @@ namespace TestApi.Models
         public DateTime DateOfBirth { get; set; }
         public required string Email { get; set; }
         public required string ContactNumber { get; set; }
-        public List<Food> foodModels { get; set; } = new List<Food>();
+        public string? FavoriteFoods { get; set; }
+
     }
 }

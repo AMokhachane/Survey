@@ -17,7 +17,10 @@ namespace TestApi.Mappers
                 FullName = userModel.FullName,
                 DateOfBirth = userModel.DateOfBirth,
                 Email = userModel.Email,
-                ContactNumber = userModel.ContactNumber
+                ContactNumber = userModel.ContactNumber,
+                FavoriteFoods = string.IsNullOrEmpty(userModel.FavoriteFoods)
+                ? new List<string>()
+                : userModel.FavoriteFoods.Split(',').ToList()
             };
         }
 
@@ -28,7 +31,10 @@ namespace TestApi.Mappers
                 FullName = userDto.FullName,
                 DateOfBirth = userDto.DateOfBirth,
                 Email = userDto.Email,
-                ContactNumber = userDto.ContactNumber
+                ContactNumber = userDto.ContactNumber,
+                FavoriteFoods = userDto.FavoriteFoods != null 
+                ? string.Join(',', userDto.FavoriteFoods) 
+                : null
             };
         }
     }
