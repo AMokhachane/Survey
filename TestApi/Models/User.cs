@@ -8,6 +8,8 @@ namespace TestApi.Models
         public required string Email { get; set; }
         public required string ContactNumber { get; set; }
         public string? FavoriteFoods { get; set; }
+        public string? Preferences { get; set; }
+
 
     }
 }

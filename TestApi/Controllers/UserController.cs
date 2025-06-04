@@ -43,11 +43,11 @@ namespace TestApi.Controllers
 
         [HttpPost]
         public IActionResult Create([FromBody] CreateUserRequestDto userDto)
-        {
-            var userModel = userDto.ToUserFromCreateDTO();
+        {   var userModel = userDto.ToUserFromCreateDTO();
             _context.Users.Add(userModel);
             _context.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { id = userModel.Id }, userModel.ToUserDto());
         }
+         
     }
 }

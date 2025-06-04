@@ -20,7 +20,10 @@ namespace TestApi.Mappers
                 ContactNumber = userModel.ContactNumber,
                 FavoriteFoods = string.IsNullOrEmpty(userModel.FavoriteFoods)
                 ? new List<string>()
-                : userModel.FavoriteFoods.Split(',').ToList()
+                : userModel.FavoriteFoods.Split(',').ToList(),
+                Preferences = string.IsNullOrEmpty(userModel.Preferences)
+                ? new List<string>()
+                : userModel.Preferences.Split(',').ToList()
             };
         }
 
@@ -32,8 +35,11 @@ namespace TestApi.Mappers
                 DateOfBirth = userDto.DateOfBirth,
                 Email = userDto.Email,
                 ContactNumber = userDto.ContactNumber,
-                FavoriteFoods = userDto.FavoriteFoods != null 
-                ? string.Join(',', userDto.FavoriteFoods) 
+                FavoriteFoods = userDto.FavoriteFoods != null
+                ? string.Join(',', userDto.FavoriteFoods)
+                : null,
+                Preferences = userDto.Preferences != null
+                ? string.Join(',', userDto.Preferences)
                 : null
             };
         }
