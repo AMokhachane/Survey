@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
 }
 
-.App-link {
-  color: #61dafb;
+/* Left side: _Surveys */
+nav > span {
+  font-weight: bold;
+  /* align left by default due to flex */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Right side container for links */
+nav > div {
+  display: flex;
+  gap: 1rem;
+}
+
+/* All links default style */
+nav > div > a {
+  text-decoration: none;
+  color: inherit; /* inherit default */
+}
+
+/* Specifically the VIEW SURVEY RESULTS link to be blue */
+nav > div > a:last-child {
+  color: blue;
+}
+
+/* Optional: add some spacing to FILL OUT SURVEY */
+nav > div > a:first-child {
+  margin-right: 1rem;
 }

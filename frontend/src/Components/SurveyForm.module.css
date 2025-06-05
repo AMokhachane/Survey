@@ -1,49 +1,126 @@
-/* SurveyForm.module.css */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 160mm;
+  margin-left: 60px;
+  font-family: Arial, sans-serif;
+  font-size: 3.5mm;
 }
 
-.grid-two-columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
+.personalDetailsSection {
+  display: flex;
+  margin-bottom: 5mm;
 }
 
-.food-options {
-  margin-bottom: 20px;
+.labelColumn {
+  width: 50mm;
+  padding-top: 5mm;
 }
 
-.food-options label {
-  margin-right: 15px;
+.inputColumn {
+  flex-grow: 1;
+  margin-top: 8mm;
 }
 
-.rating-intro {
-  margin-bottom: 10px;
+.inputGroup {
+  margin-bottom: 2mm;
 }
 
-.table-wrapper {
-  overflow-x: auto;
-  margin-bottom: 20px;
+.inputLabel {
+  display: block;
+  margin-bottom: 1mm;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
+.inputField {
+  width: 50mm;
+  height: 5mm;
+  border: 0.5mm solid #3399ff;
+  font-size: 3.5mm;
+  border-radius: 1mm;
+  padding: 0 1mm;
 }
 
-th, td {
-  padding: 8px;
-  border: 1px solid #ccc;
-  text-align: center;
+
+.errorInput {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-size: 3mm;
+  margin-top: 1mm;
+  display: block;
+}
+
+.foodOptions {
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+  margin-top: 4mm;
+  font-size: 3.5mm;
+}
+
+.foodOptions p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.foodOptions label {
+  margin-right: 3mm;
+  display: flex;
+  align-items: center;
+  gap: 1mm;
+}
+
+.foodOptions input[type="checkbox"] {
+  width: 4mm;
+  height: 4mm;
+  border: 0.5mm solid blue;
+  accent-color: blue; /* makes the checkbox tick mark blue in supported browsers */
 }
 
 button {
-  background-color: #165A72;
+  padding: 4mm 10mm;
+  background-color: #3399ff;
   color: white;
-  padding: 10px 20px;
+  font-size: 4mm;
   border: none;
+  border-radius: 1mm;
   cursor: pointer;
+  margin-left: 100mm;
+}
+
+button:hover {
+  background-color: #007acc;
+}
+
+.ratingSection {
+  margin-top: 8mm;
+  font-size: 3.5mm;
+}
+.ratingSection p {
+  font-size: 4mm;
+  max-width: 200%;
+  margin-bottom: 4mm;
+}
+
+
+.ratingTable {
+  width: 250mm;
+  border-collapse: collapse;
+  font-size: 3.5mm;
+  margin-top: 4mm;
+}
+
+.ratingTable th,
+.ratingTable td {
+  border: 0.3mm solid #ccc;
+  padding: 2mm;
+  text-align: center;
+}
+
+.ratingHeader th {
+  background-color: #e0e0e0; /* light gray background */
+}
+
+.statementCell {
+  text-align: left;
 }
