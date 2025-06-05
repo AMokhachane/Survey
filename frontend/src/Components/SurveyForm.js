@@ -40,8 +40,7 @@ const handleChange = (e) => {
 
   setErrors({ ...errors, [name]: error });
 };
-
-
+  
   const handleBlur = (e) => {
     setTouched({ ...touched, [e.target.name]: true });
     if (form[e.target.name].trim() === "") {

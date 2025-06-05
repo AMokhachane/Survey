@@ -6,30 +6,24 @@ nav {
   border-bottom: 1px solid #ccc;
 }
 
-/* Left side: _Surveys */
 nav > span {
   font-weight: bold;
-  /* align left by default due to flex */
 }
 
-/* Right side container for links */
 nav > div {
   display: flex;
   gap: 1rem;
 }
 
-/* All links default style */
 nav > div > a {
   text-decoration: none;
-  color: inherit; /* inherit default */
+  color: inherit;
 }
 
-/* Specifically the VIEW SURVEY RESULTS link to be blue */
 nav > div > a:last-child {
   color: blue;
 }
 
-/* Optional: add some spacing to FILL OUT SURVEY */
 nav > div > a:first-child {
   margin-right: 1rem;
 }

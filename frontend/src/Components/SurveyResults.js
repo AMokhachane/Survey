@@ -32,7 +32,6 @@ const SurveyResult = () => {
     return age;
   };
 
-  // Helper to parse preferences array (["I like to watch movies:2", ...]) into object { key: rating }
   const parsePreferences = (prefsArray) => {
     if (!prefsArray) return {};
     return prefsArray.reduce((acc, curr) => {
@@ -55,7 +54,6 @@ const SurveyResult = () => {
     const pastaFans = surveys.filter((s) => s.favoriteFoods?.includes("Pasta")).length;
     const papAndWorsFans = surveys.filter((s) => s.favoriteFoods?.includes("Pap and Wors")).length;
 
-    // Count people who like a preference (rating 1 or 2)
     const countLikes = (key) =>
       surveys.filter((s) => {
         const prefs = parsePreferences(s.preferences);
