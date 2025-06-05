@@ -23,16 +23,24 @@ const SurveyForm = () => {
     "I like to eat out",
     "I like to watch TV",
   ];
+const handleChange = (e) => {
+  const { name, value } = e.target;
+  setForm({ ...form, [name]: value });
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  let error = "";
 
-    if (e.target.value.trim() === "") {
-      setErrors({ ...errors, [e.target.name]: `${e.target.placeholder} is required` });
-    } else {
-      setErrors({ ...errors, [e.target.name]: "" });
+  if (value.trim() === "") {
+    error = `${e.target.placeholder} is required`;
+  } else if (name === "dob") {
+    const selectedYear = new Date(value).getFullYear();
+    if (selectedYear > 2020) {
+      error = "User must be at least 5 years old.";
     }
-  };
+  }
+
+  setErrors({ ...errors, [name]: error });
+};
+
 
   const handleBlur = (e) => {
     setTouched({ ...touched, [e.target.name]: true });
@@ -69,9 +77,17 @@ const SurveyForm = () => {
     const newErrors = {};
     if (!form.name.trim()) newErrors.name = "Full Names is required";
     if (!form.email.trim()) newErrors.email = "Email is required";
-    if (!form.dob.trim()) newErrors.dob = "Date of Birth is required";
+    if (!form.dob.trim()) {
+  newErrors.dob = "Date of Birth is required";
+} else {
+  const selectedYear = new Date(form.dob).getFullYear();
+  if (selectedYear > 2020) {
+    newErrors.dob = "User must be at least 5 years old.";
+  }
+}
     if (!form.contact.trim()) newErrors.contact = "Contact Number is required";
     if (form.food.length === 0) newErrors.food = "Please select at least one favorite food";
+    
 
     const missingRatings = ratingStatements.filter((stmt) => !ratings[stmt]);
     if (missingRatings.length > 0) {
